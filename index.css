@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Madrid Branding Colors */
+    --madrid-red: 0 100% 50%;
+    --madrid-black: 0 0% 0%;
+    --madrid-white: 0 0% 100%;
+
+    /* System Colors using Madrid Brand */
+    --color-primary: var(--madrid-red);
+    --color-primary-foreground: var(--madrid-white);
+
+    --color-secondary: 0 0% 15%;
+    --color-secondary-foreground: var(--madrid-white);
+
+    --color-accent: var(--madrid-red);
+    --color-accent-foreground: var(--madrid-white);
+
+    --color-success: 158 64% 40%;
+    --color-success-foreground: var(--madrid-white);
+
+    --color-warning: 38 92% 56%;
+    --color-warning-foreground: var(--madrid-black);
+
+    --color-error: var(--madrid-red);
+    --color-error-foreground: var(--madrid-white);
+
+    --color-background: var(--madrid-white);
+    --color-foreground: var(--madrid-black);
+
+    --color-muted: 0 0% 96%;
+    --color-muted-foreground: 0 0% 46%;
+
+    --color-card: var(--madrid-white);
+    --color-card-foreground: var(--madrid-black);
+
+    --color-border: 0 0% 91%;
+  }
+
+  .dark {
+    /* Dark mode using Madrid branding - minimal dark theme */
+    --color-background: 0 0% 4%;
+    --color-foreground: var(--madrid-white);
+
+    --color-muted: 0 0% 16%;
+    --color-muted-foreground: 0 0% 64%;
+
+    --color-card: 0 0% 8%;
+    --color-card-foreground: var(--madrid-white);
+
+    --color-border: 0 0% 17%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: Arial, Helvetica, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  .font-bold {
+    font-family: "Arial Black", Arial, sans-serif;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Clerk Auth Madrid Styling */
+.clerk-auth-madrid .cl-formButtonPrimary {
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  color: white !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: bold !important;
+}
+
+.clerk-auth-madrid .cl-formButtonPrimary:hover {
+  background-color: #e60000 !important;
+  border-color: #e60000 !important;
+}
+
+.clerk-auth-madrid .cl-socialButtonsBlockButton {
+  border: 1px solid #e5e5e5 !important;
+  color: #333 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.clerk-auth-madrid .cl-socialButtonsBlockButton:hover {
+  background-color: #f8f8f8 !important;
+}
+
+.clerk-auth-madrid .cl-formFieldInput {
+  border: 1px solid #d1d5db !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.clerk-auth-madrid .cl-formFieldInput:focus {
+  border-color: #ff0000 !important;
+  box-shadow: 0 0 0 1px #ff0000 !important;
+}
+
+.clerk-auth-madrid .cl-headerTitle {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: bold !important;
+  color: #000 !important;
+}
+
+.clerk-auth-madrid .cl-headerSubtitle {
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: #666 !important;
+}
+
+.clerk-auth-madrid .cl-footerActionLink {
+  color: #ff0000 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.clerk-auth-madrid .cl-footerActionLink:hover {
+  color: #e60000 !important;
+}
+
+.clerk-auth-madrid .cl-card {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.clerk-auth-madrid .cl-main {
+  font-family: Arial, Helvetica, sans-serif !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.clerk-auth-madrid .cl-card {
+  width: 100% !important;
+  max-width: 400px !important;
+  margin: 0 auto !important;
+}
+
+.clerk-auth-madrid .cl-rootBox {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Hide the "Secured by Clerk" branding to center the form properly */
+.clerk-auth-madrid .cl-branded,
+.clerk-auth-madrid .cl-internal-b3fm6y,
+.clerk-auth-madrid [class*="cl-internal"][class*="branded"] {
+  display: none !important;
+}
+
+/* Hide any Clerk branding links */
+.clerk-auth-madrid a[href*="clerk.com"],
+.clerk-auth-madrid .cl-footerPages a[href*="clerk.com"] {
+  display: none !important;
+}
+
+/* Any other Clerk branding elements */
+.clerk-auth-madrid [style*="background-color: rgb(55, 99, 244)"] {
+  background-color: #ff0000 !important;
+}
+
+.clerk-auth-madrid [style*="background: rgb(55, 99, 244)"] {
+  background: #ff0000 !important;
+}
+
+/* Bolt Button Styles */
+#bolt-button {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  width: 6vw;
+  height: 6vw;
+  background-image: url(/images/bolt.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  transition: opacity 300ms;
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  #bolt-button {
+    width: 12vw;
+    height: 12vw;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
